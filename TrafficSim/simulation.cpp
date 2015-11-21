@@ -1,7 +1,9 @@
 #include "simulation.h"
+#include "map.h"
 
 void Simulation::init_simulation() {
-    
+    map1->init();
+    map2->init();
 }
 
 void Simulation::start_simulation() {

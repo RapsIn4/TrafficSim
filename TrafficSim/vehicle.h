@@ -16,20 +16,16 @@ struct Direction {
 
 class Vehicle : public Entity {
 public:
-    Vehicle();
-    ~Vehicle();
+    void update(Map *input, Map *output);
     
-    override void update();
-    
-    void setDirection(Direction direction);
-    Direction getDirection() const;
-    void setSpeed(float speed);
-    float getSpeed() const;
-    void setRecommendedAcceleration(float speed);
-    float getRecommendedAcceleration() const;
-    void setRecommendedDeceleration(float speed);
-    float getRecommendedDeceleration() const;
-    
+    void setDirection(Direction direction) { this->direction = direction; }
+    Direction getDirection() const { return direction; }
+    void setSpeed(float speed) { this->speed = speed; }
+    float getSpeed() const { return speed; }
+    void setRecommendedAcceleration(float accel) { this->recommended_acceleration = accel; }
+    float getRecommendedAcceleration() const { return recommended_acceleration; }
+    void setRecommendedDeceleration(float decel) { this->recommended_deceleration = decel; }
+    float getRecommendedDeceleration() const { return recommended_deceleration; }
     
 private:
     VehicleType vehicle_type;

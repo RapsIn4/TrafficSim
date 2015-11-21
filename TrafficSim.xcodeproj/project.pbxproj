@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EA4285191C01130E009968E1 /* simulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA4285171C01130E009968E1 /* simulation.cpp */; };
+		EA42851B1C011A3C009968E1 /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA42851A1C011A3C009968E1 /* map.cpp */; };
+		EA42851D1C011AAC009968E1 /* vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA42851C1C011AAC009968E1 /* vehicle.cpp */; };
 		EAAAC0301BFE752C00E07FD6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAAAC02F1BFE752C00E07FD6 /* main.cpp */; };
 		F8682DFD1C011415006E4DD7 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8682DFC1C011415006E4DD7 /* jsoncpp.cpp */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		EA4285161C01060A009968E1 /* simulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simulation.h; sourceTree = "<group>"; };
 		EA4285171C01130E009968E1 /* simulation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simulation.cpp; sourceTree = "<group>"; };
+		EA42851A1C011A3C009968E1 /* map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = map.cpp; sourceTree = "<group>"; };
+		EA42851C1C011AAC009968E1 /* vehicle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vehicle.cpp; sourceTree = "<group>"; };
 		EAAAC02C1BFE752C00E07FD6 /* TrafficSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TrafficSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAAC02F1BFE752C00E07FD6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EAAAC0361BFE754E00E07FD6 /* vehicle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vehicle.h; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				EAAAC0391BFE7BD100E07FD6 /* map.h */,
 				EA4285161C01060A009968E1 /* simulation.h */,
 				EA4285171C01130E009968E1 /* simulation.cpp */,
+				EA42851A1C011A3C009968E1 /* map.cpp */,
+				EA42851C1C011AAC009968E1 /* vehicle.cpp */,
 			);
 			path = TrafficSim;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			files = (
 				EA4285191C01130E009968E1 /* simulation.cpp in Sources */,
 				EAAAC0301BFE752C00E07FD6 /* main.cpp in Sources */,
+				EA42851B1C011A3C009968E1 /* map.cpp in Sources */,
+				EA42851D1C011AAC009968E1 /* vehicle.cpp in Sources */,
 				F8682DFD1C011415006E4DD7 /* jsoncpp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

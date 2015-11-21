@@ -9,20 +9,18 @@ public:
     class Road;
     class Intersection;
     
-    std::vector<Road*> getRoadList() { return listRoads; }
-    std::vector<Intersection*> getIntersection() { return listIntersection; }
+    std::vector<Road*> getRoads() { return listRoads; }
+    std::vector<Intersection*> getIntersections() { return listIntersections; }
     
 private:
     std::vector<Road*> listRoads;
-    std::vector<Intersection*> listIntersection;
+    std::vector<Intersection*> listIntersections;
 };
 
 class Map::Road {
 public:
     class Lane;
-    Road();
     Road(std::string &name, Intersection *first, Intersection *second) : street_name(name), start(first), end(second) {}
-    ~Road();
     
 private:
     std::string street_name;

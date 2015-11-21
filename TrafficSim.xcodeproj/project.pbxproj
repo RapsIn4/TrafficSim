@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EAAAC0301BFE752C00E07FD6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAAAC02F1BFE752C00E07FD6 /* main.cpp */; };
+		F8682DFD1C011415006E4DD7 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8682DFC1C011415006E4DD7 /* jsoncpp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		EAAAC0361BFE754E00E07FD6 /* vehicle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vehicle.h; sourceTree = "<group>"; };
 		EAAAC0371BFE76FA00E07FD6 /* entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = entity.h; sourceTree = "<group>"; };
 		EAAAC0391BFE7BD100E07FD6 /* map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		F8682DFB1C011415006E4DD7 /* json */ = {isa = PBXFileReference; lastKnownFileType = folder; path = json; sourceTree = "<group>"; };
+		F8682DFC1C011415006E4DD7 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 		EAAAC02E1BFE752C00E07FD6 /* TrafficSim */ = {
 			isa = PBXGroup;
 			children = (
+				F8682DFB1C011415006E4DD7 /* json */,
+				F8682DFC1C011415006E4DD7 /* jsoncpp.cpp */,
 				EAAAC02F1BFE752C00E07FD6 /* main.cpp */,
 				EAAAC0361BFE754E00E07FD6 /* vehicle.h */,
 				EAAAC0371BFE76FA00E07FD6 /* entity.h */,
@@ -127,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAAC0301BFE752C00E07FD6 /* main.cpp in Sources */,
+				F8682DFD1C011415006E4DD7 /* jsoncpp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

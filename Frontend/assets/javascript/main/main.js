@@ -5,6 +5,8 @@ var CAR_WIDTH = 4;
 var LANE_WIDTH = 8;
 
 var renderer = PIXI.autoDetectRenderer(SCREEN_WIDTH, SCREEN_HEIGHT, { antialias: true });
+var cars = [new Point(100, 100), new Point(200, 200), new Point(300, 300)];
+
 document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
@@ -12,13 +14,13 @@ var stage = new PIXI.Container();
 
 stage.interactive = true;
 
-// var graphics = new PIXI.Graphics();
+var graphics = new PIXI.Graphics();
 
-// // set a fill and line style
-// graphics.beginFill(0xFF3300);
-// graphics.lineStyle(10, 0xffd900, 1);
+// set a fill and line style
+graphics.beginFill(0xFF3300);
+graphics.lineStyle(10, 0xffd900, 1);
 
-// // draw a shape
+// draw a shape
 // graphics.moveTo(50,50);
 // graphics.lineTo(250, 50);
 // graphics.lineTo(100, 100);
@@ -56,7 +58,7 @@ stage.interactive = true;
 // graphics.lineTo(600, 300);
 
 
-// stage.addChild(graphics);
+stage.addChild(graphics);
 
 // let's create a moving shape
 var thing = new PIXI.Graphics();
@@ -85,23 +87,23 @@ function Point(x, y) {
 }
 
 function drawAllRoads(roadsArray) {
-  
+
 }
 
-// assume that numLanes is either 1 or an even number
-function drawRoad(point1, point2, numLanes) {
-  if (numLanes == 1) {
-    var new_road = new PIXI.Graphics();
-  } else {
-
-  }
+function drawRoad(pt1, pt2) {
+  graphics.moveTo(pt1.x,pt1.y);
+  graphics.lineTo(pt1.x, pt2.y);
+  graphics.lineTo(pt2.x, pt2.y);
+  graphics.lineTo(pt2.x, pt1.y);
+  graphics.lineTo(pt1.x, pt1.y);
+  graphics.endFill();
 }
 
 function drawIntersection() {
 
 }
 
-function drawCar(point) {
+function drawCar(pt) {
 
 }
 
@@ -123,8 +125,15 @@ function animate() {
     thing.lineTo( 120 + Math.sin(count) * 20, 100 + Math.cos(count)* 20);
     thing.lineTo( -120 + Math.cos(count)* 20, 100 + Math.sin(count)* 20);
     thing.lineTo( -120 + Math.sin(count) * 20, -100 + Math.cos(count)* 20);
+    thing.endFill();
 
-    thing.rotation = count * 0.1;
+    thing.lineStyle(10, 0xffa130, 1);
+    for (var i = 2; i >= 0; i--) {
+      // uses radius
+      thing.drawCircle(cars[i].x, cars[i].y, CAR_WIDTH/2);
+    };
+    thing.endFill();
+
     renderer.render(stage);
     requestAnimationFrame( animate );
 }

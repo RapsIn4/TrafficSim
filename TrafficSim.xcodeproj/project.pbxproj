@@ -23,8 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA4285161C01060A009968E1 /* simulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simulation.h; sourceTree = "<group>"; };
 		EAAAC02C1BFE752C00E07FD6 /* TrafficSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TrafficSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAAC02F1BFE752C00E07FD6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EAAAC0361BFE754E00E07FD6 /* vehicle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vehicle.h; sourceTree = "<group>"; };
+		EAAAC0371BFE76FA00E07FD6 /* entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = entity.h; sourceTree = "<group>"; };
+		EAAAC0391BFE7BD100E07FD6 /* map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				EAAAC02F1BFE752C00E07FD6 /* main.cpp */,
+				EAAAC0361BFE754E00E07FD6 /* vehicle.h */,
+				EAAAC0371BFE76FA00E07FD6 /* entity.h */,
+				EAAAC0391BFE7BD100E07FD6 /* map.h */,
+				EA4285161C01060A009968E1 /* simulation.h */,
 			);
 			path = TrafficSim;
 			sourceTree = "<group>";
@@ -207,6 +215,10 @@
 		EAAAC0341BFE752C00E07FD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +226,10 @@
 		EAAAC0351BFE752C00E07FD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -237,6 +253,7 @@
 				EAAAC0351BFE752C00E07FD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -3,5 +3,6 @@
 
 
 void Vehicle::update(Map *input, Map *output) {
-    std::swap(input, output);
+    if(speed < DESIRED_SPEED) speed += recommended_acceleration;
+    position.first += speed;
 }

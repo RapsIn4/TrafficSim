@@ -6,6 +6,12 @@ Map::Road::Road(std::string name, size_t num_lanes, Intersection *first, Interse
     lanes.push_back(l);
 }
 
+Map::Road::~Road() {
+    for(Lane *l : lanes) {
+        delete l;
+    }
+}
+
 void Map::init() {
     Map::Intersection i1, i2;
     Map::Road road("Main St", 1, &i1, &i2);
@@ -13,6 +19,6 @@ void Map::init() {
 }
 
 Map::Road::Lane::Lane(float start_x, float start_y, float end_x, float end_y) {
-    start_point = std::make_tuple(start_x, start_y);
-    end_point = std::make_tuple(end_x, end_y);
+    start_point = std::make_pair(start_x, start_y);
+    end_point = std::make_pair(end_x, end_y);
 }

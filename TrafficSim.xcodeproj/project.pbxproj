@@ -74,12 +74,12 @@
 				F8682DFC1C011415006E4DD7 /* jsoncpp.cpp */,
 				EAAAC02F1BFE752C00E07FD6 /* main.cpp */,
 				EAAAC0361BFE754E00E07FD6 /* vehicle.h */,
+				EA42851C1C011AAC009968E1 /* vehicle.cpp */,
 				EAAAC0371BFE76FA00E07FD6 /* entity.h */,
 				EA4285161C01060A009968E1 /* simulation.h */,
 				EA4285171C01130E009968E1 /* simulation.cpp */,
 				EAAAC0391BFE7BD100E07FD6 /* map.h */,
 				EA42851A1C011A3C009968E1 /* map.cpp */,
-				EA42851C1C011AAC009968E1 /* vehicle.cpp */,
 			);
 			path = TrafficSim;
 			sourceTree = "<group>";

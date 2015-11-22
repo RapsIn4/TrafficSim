@@ -27,6 +27,7 @@ class Map::Road {
 public:
     class Lane;
     Road(std::string name, size_t num_lanes, Intersection *first, Intersection *second);
+    ~Road();
     
 private:
     std::string street_name;
@@ -38,11 +39,11 @@ private:
 class Map::Road::Lane {
 public:
     Lane(float start_x, float start_y, float end_x, float end_y);
-    std::tuple<float, float> get_starting_pt() { return start_point; }
-    std::tuple<float, float> get_end_pt() { return end_point; }
+    std::pair<float, float> get_starting_pt() { return start_point; }
+    std::pair<float, float> get_end_pt() { return end_point; }
 private:
-    std::tuple<float, float> start_point;
-    std::tuple<float, float> end_point;
+    std::pair<float, float> start_point;
+    std::pair<float, float> end_point;
 };
 
 enum Trafficlight {

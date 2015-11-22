@@ -16,6 +16,9 @@ struct Direction {
 
 class Vehicle : public Entity {
 public:
+    ~Vehicle() {
+        
+    }
     void update(Map *input, Map *output);
     
     void setDirection(Direction direction) { this->direction = direction; }
@@ -27,12 +30,14 @@ public:
     void setRecommendedDeceleration(float decel) { this->recommended_deceleration = decel; }
     float getRecommendedDeceleration() const { return recommended_deceleration; }
     
+    const float DESIRED_SPEED = 5; // 100 KM/h TODO: 
+    
 private:
     VehicleType vehicle_type;
     float speed;
     Direction direction;
-    float recommended_acceleration;
-    float recommended_deceleration;
+    float recommended_acceleration = 1;
+    float recommended_deceleration = 0.5;
 };
 
 #endif /* vehicle_h */

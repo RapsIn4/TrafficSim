@@ -28,6 +28,9 @@ public:
     class Lane;
     Road(std::string name, size_t num_lanes, Intersection *first, Intersection *second);
     ~Road();
+    std::vector<Lane*> getLanes() { return lanes; }
+    std::string getStreetName() { return street_name; }
+    size_t getNumLanes() { return num_lanes; }
     
 private:
     std::string street_name;

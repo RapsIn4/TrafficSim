@@ -10,10 +10,6 @@ enum VehicleType {
     XLARGE
 };
 
-struct Direction {
-    float x, y;
-};
-
 class Vehicle : public Entity {
 public:
     ~Vehicle() {
@@ -21,8 +17,8 @@ public:
     }
     void update(Map *input, Map *output);
     
-    void setDirection(Direction direction) { this->direction = direction; }
-    Direction getDirection() const { return direction; }
+    void setDirection(std::pair<float, float> direction) { this->direction = direction; }
+    std::pair<float, float> getDirection() const { return direction; }
     void setSpeed(float speed) { this->speed = speed; }
     float getSpeed() const { return speed; }
     void setRecommendedAcceleration(float accel) { this->recommended_acceleration = accel; }
@@ -35,7 +31,7 @@ public:
 private:
     VehicleType vehicle_type;
     float speed;
-    Direction direction;
+    std::pair<float, float> direction;
     float recommended_acceleration = 1;
     float recommended_deceleration = 0.5;
     
@@ -44,5 +40,4 @@ private:
     void updateDirection();
     void updatePosition();
 };
-
 #endif /* vehicle_h */

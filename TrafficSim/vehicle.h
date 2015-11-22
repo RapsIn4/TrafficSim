@@ -38,6 +38,11 @@ private:
     Direction direction;
     float recommended_acceleration = 1;
     float recommended_deceleration = 0.5;
+    
+    void updateAcceleration();
+    void updateVelocity();
+    void updateDirection();
+    void updatePosition();
 };
 
 #endif /* vehicle_h */

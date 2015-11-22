@@ -1,6 +1,7 @@
 #ifndef vehicle_h
 #define vehicle_h
 
+#include <math.h>
 #include "entity.h"
 
 enum VehicleType {
@@ -18,12 +19,14 @@ public:
     
     void update(Map *input, Map *output);
     
-    Map::Road::Lane getLane() { return lane; }
-    void setLane(Map::Road::Lane lane) { this->lane = lane; }
+    Map::Road::Lane* getLane() { return lane; }
+    void setLane(Map::Road::Lane *lane) { this->lane = lane; }
     void setDirection(std::pair<float, float> direction) { this->direction = direction; }
     std::pair<float, float> getDirection() const { return direction; }
     void setSpeed(float speed) { this->speed = speed; }
-    float getSpeed() const { return speed; }
+    float getSpeed() { return this->speed; }
+    void setVelocity(std::pair<float, float> velocity) { this->velocity = velocity; }
+    float getVelocity() const { return sqrt(velocity.first * velocity.first + velocity.second * velocity.second); }
     void setRecommendedAcceleration(float accel) { this->recommended_acceleration = accel; }
     float getRecommendedAcceleration() const { return recommended_acceleration; }
     void setRecommendedDeceleration(float decel) { this->recommended_deceleration = decel; }
@@ -33,11 +36,13 @@ public:
     
 private:
     VehicleType vehicle_type;
+    std::pair<float, float> velocity;
     float speed;
+    float angle;
     std::pair<float, float> direction;
     float recommended_acceleration = 1;
     float recommended_deceleration = 0.5;
-    Map::Road::Lane lane;
+    Map::Road::Lane *lane;
     
     void updateAcceleration();
     void updateVelocity();

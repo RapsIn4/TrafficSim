@@ -30,13 +30,16 @@ public:
     class Lane;
     Road(std::string name, size_t num_lanes, Intersection *first, Intersection *second);
     ~Road();
-    std::vector<Lane*> get_lanes() { return lanes; }
-    std::string get_street_name() { return street_name; }
-    size_t get_num_lanes() { return num_lanes; }
+    std::pair<float, float> getDirection() { return direction; }
+    void setDirection(std::pair<float, float> direction) { this->direction = direction; }
+    std::vector<Lane*> getLanes() { return lanes; }
+    std::string getStreetName() { return street_name; }
+    size_t getNumLanes() { return num_lanes; }
 
 private:
     std::string street_name;
     std::vector<Lane*> lanes;
+    std::pair<float, float> direction;
     Intersection *start, *end;
     size_t num_lanes;
 };
@@ -44,13 +47,17 @@ private:
 class Map::Road::Lane {
 public:
     Lane(float start_x, float start_y, float end_x, float end_y);
-    std::pair<float, float> get_starting_pt() { return start_point; }
-    std::pair<float, float> get_end_pt() { return end_point; }
-    std::vector<Vehicle*> get_vehicles() { return vehicles; }
+    std::pair<float, float> getStartingPt() { return start_point; }
+    std::pair<float, float> getEndPt() { return end_point; }
+    std::vector<Vehicle*> getVehicles() { return vehicles; }
+    std::pair<float, float> getDirection() { return direction; }
+    void setDirection(std::pair<float, float> direction) { this->direction = direction; }
 private:
     std::pair<float, float> start_point;
     std::pair<float, float> end_point;
     std::vector<Vehicle*> vehicles;
+    std::pair<float, float> direction;
+
 };
 
 enum Trafficlight {

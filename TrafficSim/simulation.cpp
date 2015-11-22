@@ -47,8 +47,8 @@ void Simulation::start_simulation() {
                 // Add points from lane
                 int start_x, start_y, end_x, end_y;
                 
-                std::pair<float,float> startPt = l->get_starting_pt();
-                std::pair<float,float> endPt = l->get_end_pt();
+                std::pair<float,float> startPt = l->getStartingPt();
+                std::pair<float,float> endPt = l->getEndPt();
                 
                 start_x = startPt.first;
                 start_y = startPt.second;

@@ -4,8 +4,9 @@
 #include <vector>
 #include <string>
 
-#define LANE_WIDTH 3 // 3 meters
+class Vehicle;
 
+#define LANE_WIDTH 3 // 3 meters
 class Map {
 public:
     class Road;
@@ -29,10 +30,10 @@ public:
     class Lane;
     Road(std::string name, size_t num_lanes, Intersection *first, Intersection *second);
     ~Road();
-    std::vector<Lane*> getLanes() { return lanes; }
-    std::string getStreetName() { return street_name; }
-    size_t getNumLanes() { return num_lanes; }
-    
+    std::vector<Lane*> get_lanes() { return lanes; }
+    std::string get_street_name() { return street_name; }
+    size_t get_num_lanes() { return num_lanes; }
+
 private:
     std::string street_name;
     std::vector<Lane*> lanes;
@@ -45,9 +46,11 @@ public:
     Lane(float start_x, float start_y, float end_x, float end_y);
     std::pair<float, float> get_starting_pt() { return start_point; }
     std::pair<float, float> get_end_pt() { return end_point; }
+    std::vector<Vehicle*> get_vehicles() { return vehicles; }
 private:
     std::pair<float, float> start_point;
     std::pair<float, float> end_point;
+    std::vector<Vehicle*> vehicles;
 };
 
 enum Trafficlight {

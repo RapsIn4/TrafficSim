@@ -8,12 +8,6 @@ void Vehicle::update(Map *input, Map *output) {
     updatePosition();
 }
 
-void Vehicle::updateAcceleration() { }
-
-void Vehicle::updateVelocity() { }
-
-void Vehicle::updateDirection() { }
-
 void Vehicle::updatePosition() {
     std::pair<float, float> direction = getDirection();
     

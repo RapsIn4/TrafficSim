@@ -15,8 +15,11 @@ public:
     ~Vehicle() {
         
     }
+    
     void update(Map *input, Map *output);
     
+    Map::Road::Lane getLane() { return lane; }
+    void setLane(Map::Road::Lane lane) { this->lane = lane; }
     void setDirection(std::pair<float, float> direction) { this->direction = direction; }
     std::pair<float, float> getDirection() const { return direction; }
     void setSpeed(float speed) { this->speed = speed; }
@@ -34,6 +37,7 @@ private:
     std::pair<float, float> direction;
     float recommended_acceleration = 1;
     float recommended_deceleration = 0.5;
+    Map::Road::Lane lane;
     
     void updateAcceleration();
     void updateVelocity();

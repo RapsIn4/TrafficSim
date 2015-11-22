@@ -1,4 +1,3 @@
-
 #ifndef entity_h
 #define entity_h
 

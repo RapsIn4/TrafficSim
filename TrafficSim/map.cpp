@@ -14,8 +14,14 @@ Map::Road::~Road() {
 
 void Map::init() {
     Map::Intersection i1, i2;
-    Map::Road road("Main St", 1, &i1, &i2);
-    addRoad(&road);
+    Map::Road *road = new Map::Road("Main St", 1, &i1, &i2);
+    addRoad(road);
+}
+
+void Map::rm() {
+    for(Road *r : listRoads) {
+        delete r;
+    }
 }
 
 Map::Road::Lane::Lane(float start_x, float start_y, float end_x, float end_y) {

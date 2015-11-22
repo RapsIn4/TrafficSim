@@ -34,15 +34,14 @@ void Simulation::start_simulation() {
         std::vector<Map::Road*> roads = map2->getRoads();
         std::vector<Map::Intersection*> intersections = map2->getIntersections();
         
-        Json::Value json_road;
+        Json::Value json_roads;
         Json::Value json_road_vec(Json::arrayValue);
         
         for(Map::Road *r : roads) {
             std::vector<Map::Road::Lane*> lanes = r->getLanes();
             
-            Json::Value json_lane;
+            Json::Value json_lane, json_road;
             Json::Value json_lane_vec(Json::arrayValue);
-            json_lane["lanes"] = json_lane_vec;
             
             for(Map::Road::Lane *l : lanes) {
                 // Add points from lane
@@ -59,20 +58,22 @@ void Simulation::start_simulation() {
                 // Serialize points here
                 Json::Value json_point;
                 
-                json_point["points"]["start_x"] = start_x;
-                json_point["points"]["start_y"] = start_y;
-                json_point["points"]["end_x"] = end_x;
-                json_point["points"]["end_y"] = end_y;
+                json_point["start_point"]["x"] = start_x;
+                json_point["start_point"]["y"] = start_y;
+                json_point["end_point"]["x"] = end_x;
+                json_point["end_point"]["y"] = end_y;
                 
-                json_lane_vec.append(json_point);
+                json_lane["lane"] = json_point;
+                json_lane_vec.append(json_lane);
             }
             
-            json_road_vec.append(json_lane);
+            json_road["road"] = json_lane_vec;
+            json_road_vec.append(json_road);
         }
         
-        json_road["lanes"] = json_road_vec;
+        json_roads["roads"] = json_road_vec;
         
-        std::cout << json_road << endl;
+        std::cout << json_roads << std::endl;
 
         time_passed += INTERVAL_IN_MS;
     }

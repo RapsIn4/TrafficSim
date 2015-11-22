@@ -12,6 +12,7 @@ public:
     class Intersection;
     
     void init();
+    void rm();
     
     void addRoad(Road *road) { listRoads.push_back(road); }
     std::vector<Road*> getRoads() { return listRoads; }
